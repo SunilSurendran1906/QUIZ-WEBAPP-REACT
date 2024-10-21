@@ -1,24 +1,25 @@
 import React from "react";
 import quizCompleteImg from "../assets/quiz-complete.png";
 import QUESTIONS from "../questions.js";
+
 export default function Summary({ userAnswers }) {
   const skippedAnswers = userAnswers.filter((answer) => answer === null);
   const correctAnswer = userAnswers.filter(
     (answer, index) => answer === QUESTIONS[index].answers[0]
   );
 
+  // Calculate percentages for skipped, correct, and wrong answers
   const SkippedAnswersShare = Math.round(
     (skippedAnswers.length / userAnswers.length) * 100
   );
   const correctAnswersShare = Math.round(
     (correctAnswer.length / userAnswers.length) * 100
   );
-
   const wrongAnswersShare = 100 - SkippedAnswersShare - correctAnswersShare;
 
   return (
     <div id="summary">
-      <img src={quizCompleteImg} alt="" />
+      <img src={quizCompleteImg} alt="Quiz Completed" />
       <h2>Quiz Completed</h2>
       <div className="flex" id="summary-stats">
         <p>
@@ -38,6 +39,7 @@ export default function Summary({ userAnswers }) {
         {userAnswers.map((answer, index) => {
           let cssClass = "user-answer";
 
+          // Determine the CSS class based on answer status
           if (answer === null) {
             cssClass += " skipped";
           } else if (answer === QUESTIONS[index].answers[0]) {
