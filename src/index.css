@@ -350,11 +350,13 @@ header h1 {
   #summary-stats p{
     align-items: center;
     margin: auto;
+   
     
   }
 
   #summary-paragraph{
     text-align: center;
+    
   }
 
   #summary h2 {

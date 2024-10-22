@@ -22,7 +22,7 @@ export default function Summary({ userAnswers }) {
       <img src={quizCompleteImg} alt="Quiz Completed" />
       <h2>Quiz Completed</h2>
       <div className="flex" id="summary-stats">
-        <p>
+        <p id="summary-paragraph">
           <span className="number">{SkippedAnswersShare}%</span>
           <span className="text">Skipped</span>
         </p>
