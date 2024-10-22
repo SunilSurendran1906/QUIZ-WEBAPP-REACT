@@ -26,11 +26,11 @@ export default function Summary({ userAnswers }) {
           <span className="number">{SkippedAnswersShare}%</span>
           <span className="text">Skipped</span>
         </p>
-        <p>
+        <p id="summary-paragraph">
           <span className="number">{correctAnswersShare}%</span>
           <span className="text">answered correctly</span>
         </p>
-        <p>
+        <p id="summary-paragraph">
           <span className="number">{wrongAnswersShare}%</span>
           <span className="text">answered incorrectly</span>
         </p>
